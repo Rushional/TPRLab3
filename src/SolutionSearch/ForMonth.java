@@ -5,16 +5,16 @@ import Solutions.StateSolution;
 
 import static SolutionSearch.ForState.calculateLastStateExpected;
 
-class ForMonth {
-    static StateSolution[] lastMonthSolution() {
+public class ForMonth {
+    public static MonthSolution calculateLastMonth() {
         StateSolution[] solutionsArray = new StateSolution[11];
-        for (int stateCoachesGot = 0; stateCoachesGot < 10; stateCoachesGot++) {
+        for (int stateCoachesGot = 0; stateCoachesGot <= 10; stateCoachesGot++) {
             //make solution for 1 state
 //            Optionally I'll make a "get max method" to have a formula in 1 line
 //            But that's a low priority
             solutionsArray[stateCoachesGot] = calculateLastStateExpected(stateCoachesGot);
         }
-//        return new MonthSolution(solutionsArray);
-        return solutionsArray;
+        return new MonthSolution(solutionsArray);
+//        return solutionsArray;
     }
 }

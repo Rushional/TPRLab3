@@ -16,4 +16,12 @@ public class StateSolution {
     public double getAverageProfit() {
         return averageProfit;
     }
+
+    public void showResults() {
+        String couchString;
+        if (couchesOrdered == 1) couchString = " couch";
+        else couchString = " couches";
+        System.out.println("Order " + couchesOrdered + couchString);
+        System.out.println("This will gain " + averageProfit + " on average");
+    }
 }
