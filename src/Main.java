@@ -1,8 +1,6 @@
 import Solutions.MonthSolution;
-import Solutions.StateSolution;
 
 import static SolutionSearch.ForMonth.calculateLastMonth;
-import static SolutionSearch.ForState.calculateLastStateExpected;
 
 public class Main {
     public static void main(String[] args) {

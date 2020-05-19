@@ -3,7 +3,7 @@ package SolutionSearch;
 import Solutions.MonthSolution;
 import Solutions.StateSolution;
 
-import static SolutionSearch.ForState.calculateLastStateExpected;
+import static SolutionSearch.ForState.calculateStateExpected;
 
 public class ForMonth {
     public static MonthSolution calculateLastMonth() {
@@ -12,7 +12,7 @@ public class ForMonth {
             //make solution for 1 state
 //            Optionally I'll make a "get max method" to have a formula in 1 line
 //            But that's a low priority
-            solutionsArray[stateCoachesGot] = calculateLastStateExpected(stateCoachesGot);
+            solutionsArray[stateCoachesGot] = calculateStateExpected(5, stateCoachesGot, null);
         }
         return new MonthSolution(solutionsArray);
 //        return solutionsArray;
