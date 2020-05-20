@@ -2,9 +2,9 @@ package Solutions;
 
 public class StateSolution {
     private int couchesOrdered;
-    private double averageProfit;
+    private int averageProfit;
 
-    public StateSolution(int couchesOrdered, double averageProfit) {
+    public StateSolution(int couchesOrdered, int averageProfit) {
         this.couchesOrdered = couchesOrdered;
         this.averageProfit = averageProfit;
     }
@@ -13,7 +13,7 @@ public class StateSolution {
         return couchesOrdered;
     }
 
-    public double getAverageProfit() {
+    public int getAverageProfit() {
         return averageProfit;
     }
 

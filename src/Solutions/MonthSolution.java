@@ -13,7 +13,17 @@ public class MonthSolution {
 
     public void showResults() {
         for (int stateCouchesGot = 0; stateCouchesGot <= 10; stateCouchesGot++) {
-            System.out.println("In case there are " + stateCouchesGot + " stored at the beginning of the month");
+            String couchString;
+            String isString;
+            if (stateCouchesGot == 1) {
+                couchString = " couch";
+                isString = "is ";
+            }
+            else {
+                couchString = " couches";
+                isString = "are ";
+            }
+            System.out.println("In case there " + isString + stateCouchesGot + couchString + " stored at the beginning of the month");
             solutionsArray[stateCouchesGot].showResults();
         }
     }

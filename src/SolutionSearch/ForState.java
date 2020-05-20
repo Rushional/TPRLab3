@@ -10,9 +10,9 @@ public class ForState {
     public static StateSolution calculateStateExpected(int monthNumber, int couchesGot, MonthSolution nextMonthSolution) {
         int maxCoachesOrdered = 10 - couchesGot;
         int bestCouchesOrdered = 0; //the most profitable amount of couches to order
-        double maxProfit = -1000000; //maximum income from this state
+        int maxProfit = -1000000; //maximum income from this state
         for (int currentCouchesOrdered = 0; currentCouchesOrdered <= maxCoachesOrdered; currentCouchesOrdered++) {
-            double expected = - 15 * (currentCouchesOrdered + couchesGot); //maintenance
+            int expected = - 15 * (currentCouchesOrdered + couchesGot); //maintenance
 //            Ordering new couches
             int fullTrips = currentCouchesOrdered / 2; //The amount of trips ordering 2 couches
             int halfTrip = currentCouchesOrdered % 2; //The amount of trips ordering just 1 couch
@@ -21,12 +21,12 @@ public class ForState {
             for (int coachesSoldMax = 0; coachesSoldMax <= 5; coachesSoldMax++) {
                 double probability = getProbability(monthNumber, coachesSoldMax);
                 int couchesSold = Math.min(coachesSoldMax, coachesSelling);
-                double nextMonthExpectedProfit;
+                int nextMonthExpectedProfit;
                 if (monthNumber != 5) {
                     nextMonthExpectedProfit = nextMonthSolution.getStateSolution(coachesSelling - couchesSold).getAverageProfit();
                 }
                 else nextMonthExpectedProfit = 0;
-                expected += 780 * couchesSold * probability + nextMonthExpectedProfit;
+                expected += probability * (780 * couchesSold + nextMonthExpectedProfit);
             }
             if (expected > maxProfit) {
                 maxProfit = expected;
