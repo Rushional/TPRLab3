@@ -1,5 +1,7 @@
+import Solutions.MonthSolution;
 import Solutions.TaskSolution;
 
+import static SolutionSearch.ForMonth.calculateMonth;
 import static SolutionSearch.ForTask.calculateTask;
 
 public class Main {
