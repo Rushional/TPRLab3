@@ -19,4 +19,17 @@ public class TaskSolution {
             System.out.print("\n \n \n");
         }
     }
+
+    public void showTableDecisions() {
+        System.out.println("Rows are states (how many couches there is at the start of the month)");
+        System.out.println("Columns are months");
+        for (int stateCouchesGot = 0; stateCouchesGot <= 10; stateCouchesGot++) {
+            for (int currentMonth = 0; currentMonth <= 5; currentMonth++) {
+                int currentDecision = solutionsArray[currentMonth].
+                        getStateSolution(stateCouchesGot).getCouchesOrdered();
+                System.out.print(currentDecision + " ");
+            }
+            System.out.println();
+        }
+    }
 }
